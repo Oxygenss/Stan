@@ -9,23 +9,17 @@ const Navbar = () => {
         <div className={classes.navbar}>
             <div>
                 <NavLink to='/professors'>
-                    <MyButton>
-                        Professors
-                    </MyButton>
+                    <MyButton text='Professors'/>
                 </NavLink>
             </div>
             <div>
                 <NavLink to='/classes'>
-                    <MyButton>
-                        Classes
-                    </MyButton>
+                    <MyButton text='Classes'/>
                 </NavLink>
             </div>
             <div>
                 <NavLink to='/facultys'>
-                    <MyButton>
-                        Faculty
-                    </MyButton>
+                    <MyButton text='Faculty'/>
                 </NavLink>
             </div>
         </div>

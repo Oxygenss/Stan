@@ -1,11 +1,13 @@
 .myBtn {
-    padding: 5px 15px;
-    color: teal;
-    font-size: 14px;
-    background-color: transparent;
-    border: 1px solid teal;
-    cursor: pointer;
     width: 200px;
-    height: 50px;
+
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    margin: 10px 20px 10px 20px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.2s;
 }
+
 

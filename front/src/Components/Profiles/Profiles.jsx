@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 
 import classes from './Profile.module.css'
 import PostList from "./PostList/PostList";

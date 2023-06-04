@@ -11,6 +11,10 @@
     grid-template-columns: 2fr 10fr;
 }
 
+body {
+    background-color: #E4D4FF;
+    margin: 50px 100px;
+}
 .content {
 
 }

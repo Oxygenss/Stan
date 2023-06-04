@@ -1,4 +1,9 @@
 .header {
     grid-area: header;
-    background-color: darkorange;
+    background-color: #CFB2FF;
+
+}
+
+h1{
+    text-align: center;
 }

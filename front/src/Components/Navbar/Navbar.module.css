@@ -1,14 +1,5 @@
 .navbar {
     grid-area: nav;
-    background-color: darkblue;
+    background-color: #CFB2FF;
 }
 
-.inActive{
-    color: white;
-    text-decoration: none;
-}
-
-.active {
-    color: gold;
-    text-decoration: none;
-}

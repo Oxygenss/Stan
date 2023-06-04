@@ -1,0 +1,14 @@
+.navbar {
+    grid-area: nav;
+    background-color: darkblue;
+}
+
+.inActive{
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: gold;
+    text-decoration: none;
+}

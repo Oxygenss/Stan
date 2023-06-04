@@ -1,0 +1,16 @@
+.app {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    grid-template-areas:
+    "header header"
+    "nav content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+}
+
+.content {
+
+}

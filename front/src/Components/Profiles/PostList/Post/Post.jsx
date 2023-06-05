@@ -6,7 +6,6 @@ const Post = (props) => {
     return (
             <div className={classes.post}>
                 <div className="postContent">
-                    <strong>{props.number}. {props.post.title}</strong>
                     <div>
                         {props.post.body}
                     </div>

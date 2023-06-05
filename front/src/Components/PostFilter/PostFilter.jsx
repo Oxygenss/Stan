@@ -18,7 +18,7 @@ const PostFilter = ({filter, setFilter}) => {
                 defaultValue='Сортировка по'
                 options={[
                     {value: 'body', name:'По содержанию'},
-                    {value: 'title', name:'По названию'}
+
                 ]}
             />
         </div>

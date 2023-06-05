@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 import classes from './Profiles.module.css'
 import PostList from "./PostList/PostList";
-import PostForm from "../PostForm/PostForm";
-import PostFilter from "../PostFilter/PostFilter";
+import PostForm from "./PostForm/PostForm";
+import PostFilter from "./PostFilter/PostFilter";
 import {usePosts} from "../../hooks/usePosts";
 
 const Profiles = (props) => {

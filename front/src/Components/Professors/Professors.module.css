@@ -1,4 +1,12 @@
-.list {
-    background-color: #CFB2FF;
+.main {
     height: 1000px;
+    background-color: #CFB2FF;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title{
+    margin: 0;
+    text-align: center;
 }

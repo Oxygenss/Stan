@@ -1,52 +1,44 @@
 import React, {useState} from 'react';
 
-import classes from './Profile.module.css'
+import classes from './Profiles.module.css'
 import PostList from "./PostList/PostList";
-import MyButton from "../../UI/Button/MyButton";
-import MyInput from "../../UI/MyInput/MyInput";
+import PostForm from "../PostForm/PostForm";
+import PostFilter from "../PostFilter/PostFilter";
+import {usePosts} from "../../hooks/usePosts";
 
 const Profiles = (props) => {
     const [posts, setPosts] = useState([
-        {id: 1, title: 'Хороший', body: 'description'},
-        {id: 2, title: 'Плохой', body: 'description'},
-        {id: 3, title: 'Норм', body: 'description'},
-        {id: 4, title: 'Отличный', body: 'description'}
+        {id: 1, body: 'гг'},
+        {id: 2, body: 'сс'},
+        {id: 3, body: 'оо'},
+        {id: 4, body: 'лл'}
 
     ])
 
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+    const [filter, setFilter] = useState({sort:'', query: ''})
+    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
 
-    const addNewPost = (e) => {
-        e.preventDefault()
-        const newPost = {
-            id: Date.now(),
-            title,
-            body
-        }
+
+    const createPost = (newPost) => {
         setPosts([...posts, newPost])
-        setTitle('')
-        setBody('')
-
     }
+
+    const removePost = (post) => {
+        setPosts(posts.filter(p => p.id !== post.id))
+    }
+
 
     return (
         <div className={classes.main}>
-            <form>
-                <MyInput
-                    value={title}
-                    onChange={e => setTitle(e.target.value)}
-                    type="text"
-                    placeholder="Название поста"/>
-                <MyInput
-                    value={body}
-                    onChange={e => setBody(e.target.value)}
-                    type="text"
-                    placeholder="Описание поста"/>
-                <MyButton onClick={addNewPost}> Создать пост</MyButton>
-            </form>
-            <PostList posts={posts} title={'Все посты'}></PostList>
+            <PostForm create={createPost}/>
+            <hr style={{margin: '15px 0'}}/>
+            <PostFilter
+                filter={filter}
+                setFilter={setFilter}
+            />
+            <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Все отзывы'}/>
+
         </div>
     );
 };

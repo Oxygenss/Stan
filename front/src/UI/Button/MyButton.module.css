@@ -5,7 +5,7 @@
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
     margin: 10px 20px 10px 20px;
-    border-radius: 3px;
+    border-radius: 10px;
     background: white;
     transition: 0.2s;
 }

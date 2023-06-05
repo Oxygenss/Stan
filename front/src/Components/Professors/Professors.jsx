@@ -6,8 +6,8 @@ import ProfessorFilter from "./ProfessorFilter/ProfessorFilter";
 import {usePosts} from "../../hooks/usePosts";
 
 const Professors = () => {
-    const [posts] = useState([
-        {id: 1, body: 'Andrew'},
+    const [professor] = useState([
+        {id: 1, body: 'Nosovitski Badim Borisovich'},
         {id: 2, body: 'Petrosyan'},
         {id: 3, body: 'Ivanova'},
         {id: 4, body: 'Kylikova'},
@@ -16,8 +16,8 @@ const Professors = () => {
 
     ])
 
-    const [filter, setFilter] = useState({sort:'', query: ''})
-    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+    const [filter, setFilter] = useState({sort: '', query: ''})
+    const sortedAndSearchedPosts = usePosts(professor, filter.sort, filter.query)
 
 
     return (
@@ -26,7 +26,7 @@ const Professors = () => {
                 filter={filter}
                 setFilter={setFilter}
             />
-            <ProfessorList   posts={sortedAndSearchedPosts} title={'Преподаватели'}/>
+            <ProfessorList professor={sortedAndSearchedPosts} title={'Преподаватели'}/>
         </div>
     );
 };

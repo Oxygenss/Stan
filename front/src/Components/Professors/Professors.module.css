@@ -1,5 +1,4 @@
 .main {
-    height: 1000px;
     background-color: #CFB2FF;
     margin: 0;
     padding: 0;
@@ -9,4 +8,8 @@
 .title{
     margin: 0;
     text-align: center;
+}
+
+.list {
+    height: 100%;
 }

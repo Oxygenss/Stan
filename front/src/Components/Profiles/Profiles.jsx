@@ -5,6 +5,8 @@ import PostList from "./PostList/PostList";
 import PostForm from "./PostForm/PostForm";
 import PostFilter from "./PostFilter/PostFilter";
 import {usePosts} from "../../hooks/usePosts";
+import MyModal from "../../UI/MyModal/MyModal";
+import MyButton from "../../UI/Button/MyButton";
 
 const Profiles = (props) => {
     const [posts, setPosts] = useState([
@@ -18,10 +20,11 @@ const Profiles = (props) => {
     const [filter, setFilter] = useState({sort:'', query: ''})
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
-
+    const[modal, setModal] = useState(false)
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost])
+        setModal(false)
     }
 
     const removePost = (post) => {
@@ -31,7 +34,16 @@ const Profiles = (props) => {
 
     return (
         <div className={classes.main}>
-            <PostForm create={createPost}/>
+            <MyButton onClick={() => setModal(true)}>
+                Добавить отзыв
+            </MyButton>
+            <MyModal
+                visible={modal}
+                setVisible={setModal}
+            >
+                <PostForm create={createPost}/>
+            </MyModal>
+
             <hr style={{margin: '15px 0'}}/>
             <PostFilter
                 filter={filter}

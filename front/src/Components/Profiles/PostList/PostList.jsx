@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from "../Profiles.module.css";
 import Post from "./Post/Post";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 const PostList = ({posts, title, remove}) => {
-    if(!posts.length) {
+    if (!posts.length) {
         return (
             <h1 style={{textAlign: 'center'}}>
                 Отзывов нет!
@@ -12,12 +12,21 @@ const PostList = ({posts, title, remove}) => {
     }
 
     return (
-        <div className={classes.main}>
-            <h1 className={classes.title}>{title}</h1>
-            {posts.map((post, index) =>
-                <Post remove={remove} number={index + 1} post={post} key={posts.id}/>
-            )}
-
+        <div>
+            <h1>
+                {title}
+            </h1>
+            <TransitionGroup>
+                {posts.map((post, index) =>
+                    <CSSTransition
+                        key={posts.id}
+                        timeout={500}
+                        classNames='post'
+                    >
+                        <Post remove={remove} number={index + 1} post={post} />
+                    </CSSTransition>
+                )}
+            </TransitionGroup>
         </div>)
 };
 
